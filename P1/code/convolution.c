@@ -7,11 +7,20 @@
 #include <stdio.h>
 
 int main(){
-    //Define kernel.
+
     //Read the image file.
+    int x,y,n;
+    unsigned char *data = stbi_load("img/lena256.png", &x, &y, &n, 1);
+    
+    //Define kernel.
+    
+    
     //Convert image file.
     //Apply convolution.
+
     //Write image to file.
+    stbi_write_png("img/greylena256.png", x, y, 1, data, 256);
+    stbi_image_free(data);
     //??
     //Profit.
 
