@@ -5,7 +5,7 @@
 #include "lib/stb_image.h"
 #include "lib/stb_image_write.h"
 #include <stdio.h>
-#include <sys/time.h>
+#include <time.h>
 
 //If the value of the pixel exceeds 255, we need to truncate it.
 int normalize(int pixel_value){
