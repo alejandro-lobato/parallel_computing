@@ -113,7 +113,7 @@ int main(){
 
     //Write image to file.
     //stbi_write_jpg("./img/greylena256.jpg", width, height, 1, data, 100);
-    stbi_write_png("./img/greylena_top_sobel.png", width, height, 1, output_data, width);
+    stbi_write_png("./img/lena-grey-sobel.png", width, height, 1, output_data, width);
     stbi_image_free(data);
 
 
