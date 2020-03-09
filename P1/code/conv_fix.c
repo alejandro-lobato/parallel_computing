@@ -34,19 +34,17 @@ int main(){
     //Declare the index.
     int i;
 
-    //Declare the value to sum.
-    int pixel;
-
         //TODO Start the timer.
         clock_gettime(CLOCK_MONOTONIC_RAW, &start);
         
         //Set the number of thread teams.
-        #pragma omp parallel num_threads(4)
+        #pragma omp parallel num_threads(4) shared(kernel,data,output_data)
         {
-            #pragma omp for private(i)
+            #pragma omp for private(i,topLeft, top, topRight, centerLeft,centerRight, bottomLeft, bottom, bottomRight)
             for(i = 0; i < dimensions; i++){
                 
-                pixel = 0;
+                //Declare the value to sum.
+                int pixel = 0;
 
                 //fprintf(fpi, "Pixel %d, value = %d\n",i, data[i]);
 
