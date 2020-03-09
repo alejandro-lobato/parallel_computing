@@ -33,6 +33,7 @@ int main(){
     
     //Declare the index.
     int i;
+    int avg;
 
         //TODO Start the timer.
         clock_gettime(CLOCK_MONOTONIC_RAW, &start);
@@ -143,6 +144,7 @@ int main(){
         clock_gettime(CLOCK_MONOTONIC_RAW, &end);
 
         uint64_t delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+        avg+= (int) delta_us;
         printf("It took %llu microseconds.\n", delta_us);
 
     //Write image to file.
